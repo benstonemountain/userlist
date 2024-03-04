@@ -1,0 +1,24 @@
+<div class="aside-wrap">
+  <div class="search-content">
+    <label for="search">Search: </label>
+    <input
+      type="text"
+      id="search"
+      [(ngModel)]="textByUser"
+      (input)="onSearch()"
+    />
+  </div>
+
+  <form [formGroup]="ordialForm" class="form">
+    <div class="ordinal-numbers" *ngFor="let item of filteredUsers let i = index">
+      <label>
+        <input type="checkbox" [formControlName]="i" (change)="showSelectedValue(i, getControl(i))" />
+        {{item.id}}
+        {{getControl(i).value}}
+        </label
+      >
+    </div>
+  </form>
+  <button (click)="showForm()">GOMBA</button>
+ 
+</div>
